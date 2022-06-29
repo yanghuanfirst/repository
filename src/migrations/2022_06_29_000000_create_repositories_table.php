@@ -26,7 +26,7 @@ class CreateRepositoriesTable extends Migration
             $table->string('file_name',255)->nullable(false)->default('')->comment("不含路径的名称");
             $table->tinyInteger('sort_field')->nullable(false)->default(0)->comment("用来排序");
             $table->timestamps();
-            $table->dropSoftDeletes();
+            $table->softDeletes();
         });
     }
 
