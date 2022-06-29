@@ -1,0 +1,21 @@
+{
+    "name": "repository/yang",
+    "description": "xway 知识库模块",
+    "authors": [
+        {
+            "name": "yanghuanfirst",
+            "email": "yang@xway.cn"
+        }
+    ],
+
+    "minimum-stability": "stable",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yang\\Repository\\Providers\\RepositoryServiceProvider"
+            ]
+        }
+    }
+
+}
