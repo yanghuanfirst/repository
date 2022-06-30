@@ -24,6 +24,7 @@ class CreateRepositoriesTable extends Migration
             $table->tinyInteger('level')->nullable(false)->default(1)->comment("等级");
             $table->tinyInteger('is_dir')->nullable(false)->default(1)->comment("1:目录 2：不是");
             $table->string('file_name',255)->nullable(false)->default('')->comment("不含路径的名称");
+            $table->string('file_path',255)->nullable(false)->default('')->comment("文件路径");
             $table->tinyInteger('sort_field')->nullable(false)->default(0)->comment("用来排序");
             $table->timestamps();
             $table->softDeletes();

@@ -7,9 +7,9 @@
  */
 
 
-
+$middleware = config("repos_config.middleware");
 //知识产权相关接口
-Route::middleware("api")->prefix("/api/holes")->group(function () {
+Route::middleware($middleware)->prefix("/holes")->group(function () {
     //漏洞文档列表
     Route::get("/", [\Yang\Repository\Controllers\Hole\HoleDocController::class, 'index'])->name("holes");
     //点击查看文件内容
