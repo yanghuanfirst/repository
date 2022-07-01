@@ -211,7 +211,7 @@ class HoleService
         $len = count($dirArr);
         $file_path = "";
         $pinfo = [];
-        DB::connection('red_mysql')->transaction(function () use ($len, $file_path, $dirArr, $user, $content, $pinfo,$id) {
+        DB::transaction(function () use ($len, $file_path, $dirArr, $user, $content, $pinfo,$id) {
             $cur_time = time();
             for ($i = 0; $i < $len; $i++) {
                 if (($i + 1) == $len) {
@@ -284,7 +284,7 @@ class HoleService
         $len = count($dirArr);
         $file_path = "";
         $pinfo = [];
-        DB::connection('red_mysql')->transaction(function () use ($len, $file_path, $dirArr, $user, $content, $pinfo) {
+        DB::transaction(function () use ($len, $file_path, $dirArr, $user, $content, $pinfo) {
             $cur_time = time();
             for ($i = 0; $i < $len; $i++) {
                 if (($i + 1) == $len) {
