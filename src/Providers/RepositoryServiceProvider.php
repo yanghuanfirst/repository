@@ -22,6 +22,9 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../config/repos_config.php' => config_path('repos_config.php')
+        ]);
         $this->loadMigrationsFrom(__DIR__.'/../migrations/2022_06_29_000000_create_repositories_table.php');
         if ( ! $this->app->routesAreCached() ) {
 

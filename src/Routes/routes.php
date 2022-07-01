@@ -8,6 +8,10 @@
 
 
 $middleware = config("repos_config.middleware");
+if(!$middleware){
+    $config = require_once __DIR__.'/../config/repos_config.php';
+    $middleware = $config['middleware'];
+}
 //知识产权相关接口
 Route::middleware($middleware)->prefix("/holes")->group(function () {
     //漏洞文档列表
