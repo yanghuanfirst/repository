@@ -2,6 +2,7 @@
 
 namespace Yang\Repository\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
 
