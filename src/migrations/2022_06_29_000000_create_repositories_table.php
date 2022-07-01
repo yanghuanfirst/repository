@@ -13,7 +13,7 @@ class CreateRepositoriesTable extends Migration
     public function up()
     {
         Schema::create('repositories', function (Blueprint $table) {
-            $table->id()->autoIncrement()->primary();
+            $table->id()->autoIncrement();
             $table->integer('user_id')->nullable(false)->default(0)->comment("提交知识库的用户ID");
             $table->integer('pid')->nullable(false)->default(0)->comment("父级ID");
             $table->longText('content')->comment("描述内容");
