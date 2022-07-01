@@ -3,7 +3,7 @@
 namespace Yang\Repository\Exceptions;
 
 use Exception;
-use Yang\Repository\Helpers\ApiResponse;
+use Yang\Repository\Helper\ApiResponse;
 use Throwable;
 
 class NoticeException extends Exception
