@@ -13,7 +13,7 @@ if(!$middleware){
     $middleware = $config['middleware'];
 }
 //知识产权相关接口
-Route::middleware($middleware)->prefix("/holes")->group(function () {
+Route::middleware($middleware)->prefix("/api/holes")->group(function () {
     //漏洞文档列表
     Route::get("/", [\Yang\Repository\Controllers\Hole\HoleDocController::class, 'index'])->name("holes");
     //点击查看文件内容
