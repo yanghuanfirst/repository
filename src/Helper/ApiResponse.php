@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Log;
 
 trait ApiResponse
 {
+    public $successCode = 1;
+    public $failCode = -1;
     /**
      * 返回一个json
      * @param $code 状态码
@@ -28,9 +30,9 @@ trait ApiResponse
         if(is_array($data)){
             $tmp['route_name'] = $this->getRouteName();
             $res = array_merge($data,$tmp);
-            return $this->jsonResponse(config("message.success"),$message,$res);
+            return $this->jsonResponse($this->successCode,$message,$res);
         }else{
-            return $this->jsonResponse(config("message.success"),$message,$data);
+            return $this->jsonResponse($this->successCode,$message,$data);
         }
 
     }
@@ -39,9 +41,9 @@ trait ApiResponse
         if(is_array($data)){
             $tmp['route_name'] = $this->getRouteName();
             $res = array_merge($data,$tmp);
-            return $this->jsonResponse(config("message.error"),$message,$res);
+            return $this->jsonResponse($this->failCode,$message,$res);
         }else{
-            return $this->jsonResponse(config("message.error"),$message,$data);
+            return $this->jsonResponse($this->failCode,$message,$data);
         }
     }
 

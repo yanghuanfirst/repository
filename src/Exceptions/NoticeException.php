@@ -10,7 +10,7 @@ class NoticeException extends Exception
 {
     use ApiResponse;
 
-    function report(){
+    function render(){
         $msg = $this->message;
         $message = json_decode($msg,true);
         if(!is_array($message)){//说明传的是字符串，不是json字符串
@@ -22,10 +22,6 @@ class NoticeException extends Exception
                 return $this->fail($message['msg']);
             }
         }
-    }
-
-    function render(){
-        return false;
     }
 
 }
