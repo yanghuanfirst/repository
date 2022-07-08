@@ -10,15 +10,22 @@ class NoticeException extends Exception
 {
     use ApiResponse;
 
-
-    //
-    public function render($request)
-    {
-        $message = json_decode($this->getMessage(),true);
-        if(isset($message['code'])){
-            return $this->jsonResponse($message['code'],$message['msg']);
+    function report(){
+        $msg = $this->message;
+        $message = json_decode($msg,true);
+        if(!is_array($message)){//说明传的是字符串，不是json字符串
+            return $this->fail($msg);
         }else{
-            return $this->fail($message['msg']);
+            if(isset($message['code'])){
+                return $this->jsonResponse($message['code'],$message['msg']);
+            }else{
+                return $this->fail($message['msg']);
+            }
         }
     }
+
+    function render(){
+        return false;
+    }
+
 }
