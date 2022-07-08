@@ -14,7 +14,7 @@ class RepositoryServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = false; // 延迟加载服务
+    protected $defer = true; // 延迟加载服务
     /**
      * bootstrap the application services.
      *
