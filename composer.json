@@ -21,6 +21,7 @@
                 "Yang\\Repository\\Providers\\RepositoryServiceProvider"
             ]
         }
-    }
+    },
+    "license": "MIT"
 
 }
